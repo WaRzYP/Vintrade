@@ -1,9 +1,9 @@
 <head>
-    <link rel="stylesheet" href="css/annonces.css">
+    <link rel="stylesheet" href="assets/css/annonces.css">
 </head>
 
 <!-- CRUD -->
-<form method="POST" action="bdd/new_annonce.php" enctype="multipart/form-data">
+<form method="POST" action="assets/bdd/new_annonce.php" enctype="multipart/form-data">
     <div>
         <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
         <label for="file">*(max 1Mo) </label>
@@ -40,7 +40,7 @@
         </select>
     </div>
     <div>
-        <label for="theme">Thémes</label>
+        <label for="theme">Themes</label>
         <select name="theme" id="theme">
             <option value="vetements">Vétements</option>
             <option value="accessoire">Accéssoires</option>
@@ -56,4 +56,4 @@
     
 </form>
 
-<script src="js/script_annonces.js"></script>
+<script src="assets/js/script_annonces.js"></script>
