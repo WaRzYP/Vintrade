@@ -27,7 +27,7 @@ if( $nom != "" && $prenom != "" && $pseudo != ""  && $email != ""  && $password_
             
             $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-            $PDOinsertuserweb = $objBdd->prepare("INSERT INTO  `users` ( nom, prenom, avatar,pseudo, email, mdp) VALUES ( :nom, :prenom, :avatar,:pseudo, :email, :password)");
+            $PDOinsertuserweb = $objBdd->prepare("INSERT INTO  `users` ( nom, prenom, avatar, pseudo, email, mdp) VALUES ( :nom, :prenom, :avatar,:pseudo, :email, :password)");
 
             $PDOinsertuserweb->bindParam(':nom', $nom, PDO::PARAM_STR); 
             
