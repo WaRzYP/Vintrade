@@ -1,30 +1,40 @@
-
 <head>
+
     <link rel="stylesheet" href="assets/css/connexion.css">
+
 </head>
 
-<main id="main">
+    <!-- verification -->
+    <!-- <a href="index.php?page=inscription">vers page inscription</a> -->
+    
 
-    <form method="POST" action="assets/bdd/connexion_action.php">
+    <h1>Déjà inscrit ?</h1>
 
-        <h3>Connexion</h3>
+    <div class="connexion-box">
 
-        <div class="content-form">
-            <label for="email">Email *</label>
-            <input type="email" name="email" required>
-        </div>
+        <h2>Connexion</h2>
 
-        <div class="content-form">
-            <label for="mdp">Mot de passe *</label>
-            <input type="password" name="mdp" required>
-        </div>
+        <form method="POST" action="assets/bdd/connexion_action.php">
 
-        <a href="inscription.php">S'inscrire</a>
+            <div class="user-box">
+                <input type="text" name="" required="">
+                <label>Email</label>
+            </div>
 
-        <div class="content-form">
-            <input type="submit">
-        </div>
+            <div class="user-box">
+                <input type="password">
+                <label for="">Mot de passe</label>
+            </div>
 
-    </form>
+            <a href="">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Se connecter
+            </a>
 
-</main>
+        </form>
+
+    </div>
+
