@@ -1,16 +1,22 @@
-<link rel="stylesheet" href="css/annonces.css">
+<head>
+    <link rel="stylesheet" href="css/annonces.css">
+</head>
 
 <!-- CRUD -->
 <form method="POST" action="bdd/new_annonce.php" enctype="multipart/form-data">
-
+    <div>
+        <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
+        <label for="file">*(max 1Mo) </label>
+    </div>
+    
     <div>
         <label for="titre">Titre de l'annonce</label>
         <input type="text" name="titre" id="titre" autofocus>
     </div>
-
+    
     <div>
-        <label for="message">Message</label>
-        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
     </div>
     <div>
         <label for="categories">Catégories</label>
@@ -18,9 +24,9 @@
     </div>
     <label for="prix">Prix</label>
     <input type="number" name="prix">
-    </div>
-    <div>
-        <label for="local">Localisation</label>
+</div>
+<div>
+    <label for="local">Localisation</label>
         <input type="text" name="localisation" id="localisation">
     </div>
     <div>
@@ -44,11 +50,10 @@
         </select>
     </div>
     <input type="hidden" value="1" name="iduser">
-    <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
     <div>
         <input type="submit" value="Envoyer">
     </div>
-
+    
 </form>
 
 <script src="js/script_annonces.js"></script>

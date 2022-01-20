@@ -2,7 +2,7 @@
 
         
 
-require("bdd/bddconfig.php");
+require("assets/bdd/bddconfig.php");
 
 
 try{
@@ -11,7 +11,7 @@ try{
     
     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $recup = $objBdd->query("SELECT * FROM `message` ORDER BY date DESC ");
+    $recup = $objBdd->query("SELECT * FROM `annonces` ORDER BY date DESC ");
 
 }catch( Exception $prmE){
 
@@ -25,7 +25,7 @@ try{
 <?php 
 
 
-require("bdd/bddconfig.php");
+require("assets/bdd/bddconfig.php");
 
 
 try{
@@ -34,7 +34,7 @@ try{
     // En cas de problème renvoie dans le catch avec l'erreur
     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // ici on prepare notre requête SQL
-    $allImage = $objBdd->query("SELECT * FROM `file` ORDER BY id DESC ");
+    $allImage = $objBdd->query("SELECT * FROM `annonces` ORDER BY id_annonce DESC ");
 
 }catch( Exception $prmE){
 
@@ -69,19 +69,15 @@ try{
         
         <div class="pseudo-date">
             
-            <h2> <?php echo stripslashes($messageSimple["pseudo"]); ?> </h2>
+            <h2> <?php echo stripslashes($messageSimple["titre"]); ?> </h2>
             
             <p> <?php echo $messageSimple["date"]; ?> </p>
         </div>
         <div class="message">
             
-            <p> <?php echo stripslashes($messageSimple["message"]); ?></p>
+            <p> <?php echo stripslashes($messageSimple["description"]); ?></p>
+            <p> <?php echo stripslashes($messageSimple["price"]); ?></p>
             
-            <a href="delete_message.php?id=<?php echo $messageSimple["id"]; ?>">Supprimer</a>
-
-            <a href="formulaire_update.php?id=<?php echo $messageSimple["id"]; ?>">Modifier</a>
-
-            <a href="affichage_commentaire.php?id=<?php echo $messageSimple["id"]; ?>">Voir</a>
         
         </div>
 
