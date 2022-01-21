@@ -10,19 +10,20 @@
 <body>
 
 
-
 <?php include("templates/header.html"); ?>
+<!-- <?php include("header.html"); ?> -->
 
 
 
 <?php 
 
 
-$id = $_GET['id'];
+
+$id = $_GET['id_annonce'];
 
 
 
- require("bdd/bddconfig.php");
+ require("assets/bdd/bddconfig.php");
   
  try{
  
@@ -30,7 +31,7 @@ $id = $_GET['id'];
 
      $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-     $recup = $objBdd->query("SELECT * FROM `annonces` WHERE `id` = $id ");
+     $recup = $objBdd->query("SELECT * FROM `annonces` WHERE `id_annonce` = $id ");
 
  }catch( Exception $prmE){
 
@@ -50,19 +51,29 @@ $id = $_GET['id'];
 
     <div class="box">
         
+
+
+        <div class="div-image">
+
+            <img src="assets/upload/<?php echo $messageSimple['image'] ?>" alt="image" >
+
+        </div>
+
+
         <div class="pseudo-date">
            
-            <h2> <?php echo stripslashes($messageSimple["pseudo"]); ?> </h2>
+            <h2> <?php echo stripslashes($messageSimple["titre"]); ?> </h2>
             
             <p> <?php echo $messageSimple["date"]; ?> </p>
         </div>
         <div class="message">
             
-            <p> <?php echo stripslashes($messageSimple["message"]); ?></p>
-            
-            <a href="delete_message.php?id=<?php echo $messageSimple["id"] ?>">Supprimer</a>
 
-            <a href="formulaire_update.php?id=<?php echo $messageSimple["id"] ?>">Modifier</a>
+            <p> <?php echo stripslashes($messageSimple["description"]); ?></p>
+            
+            <a href="delete_message.php?id=<?php echo $messageSimple["id_annonce"] ?>">Supprimer</a>
+
+            <a href="formulaire_update.php?id=<?php echo $messageSimple["id_annonce"] ?>">Modifier</a>
         
         </div>
 
@@ -75,7 +86,7 @@ $id = $_GET['id'];
 
 
 <!-- recupère le footer et l'affiche sur notre page -->
-<?php include("footer.html"); ?>
+<!-- <?php include("footer.html"); ?> -->
 
 
     

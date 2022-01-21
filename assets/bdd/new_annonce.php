@@ -9,7 +9,8 @@ $size = $_FILES['file']['size'];
 $error = $_FILES['file']['error'];
 
 $titre = htmlspecialchars($_POST["titre"]);
-$message = htmlspecialchars($_POST["message"]);
+
+$description = htmlspecialchars($_POST["description"]);
 $prix = htmlspecialchars($_POST["prix"]);
 $localisation = htmlspecialchars($_POST["localisation"]);
 $taille = htmlspecialchars($_POST["taille"]);
@@ -22,14 +23,15 @@ require("bddconfig.php");
 
 try{
 
-        // explode sépare la chaine => ( image.jpg -> ["image", "jpg"] ) Agis comme un split(".") en js 
-        $tabExtension = explode('.', $name);
-        //strtolower met en minuscule tout une String
-        $extension = strtolower(end($tabExtension));
-        //Extensions des images qu'on accepte seulement
-        $extensions = ['jpg', 'png', 'jpeg', 'gif'];
-        //Va permettre la vérification de la taille (ici c'est la taille a ne pas dépasser)
-        $maxSize = 10000000;
+
+    // explode sépare la chaine => ( image.jpg -> ["image", "jpg"] ) Agis comme un split(".") en js 
+    $tabExtension = explode('.', $name);
+    //strtolower met en minuscule tout une String
+    $extension = strtolower(end($tabExtension));
+    //Extensions des images qu'on accepte seulement
+    $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+    //Va permettre la vérification de la taille (ici c'est la taille a ne pas dépasser)
+    $maxSize = 10000000;
 
     $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
    
@@ -48,7 +50,7 @@ try{
         (:titre , :description, :price, :localisation, :taille, :theme, :image, :iduser) ");
 
         $PDOinsert->bindParam(':titre' , $titre , PDO::PARAM_STR);
-        $PDOinsert->bindParam(':description' , $message , PDO::PARAM_STR);
+        $PDOinsert->bindParam(':description' , $description , PDO::PARAM_STR);
         $PDOinsert->bindParam(':image' , $file_afterverif , PDO::PARAM_STR);
         $PDOinsert->bindParam(':price' , $prix , PDO::PARAM_STR);
         $PDOinsert->bindParam(':localisation' , $localisation , PDO::PARAM_STR);
@@ -59,7 +61,8 @@ try{
         $PDOinsert->execute();
 
 
-        header('Location: index.php');
+
+        header('Location: ../../index.php');
     }
 }catch( Exception $prmE){
 
