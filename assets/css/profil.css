@@ -1,0 +1,32 @@
+.content-avatar{
+    display:flex;
+}
+
+.content-description{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.pseudo-avis{
+    margin: 20px 0 0 10px;
+}
+
+.avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 197px 197px 197px 197px;
+    background-color: mediumslateblue;
+    display: flex;
+    
+}
+
+.description-profil{
+    margin: 20px 0 0 0 ;
+    width: 30%;
+    background-color: rgba(241, 240, 240, 0.87);
+    align-items: center;
+    justify-content: center;
+    box-shadow: 8px 3px 6px 2px #979797;
+}
