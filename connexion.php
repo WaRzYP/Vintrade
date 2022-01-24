@@ -1,12 +1,18 @@
-<head>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/connexion.css">
 
+    <title>Connexion - Vintrade</title>
 </head>
 
-    <!-- verification -->
-    <!-- <a href="index.php?page=inscription">vers page inscription</a> -->
-    
+<body>
+
+    <?php include "assets/templates/header.html" ?>
 
     <h1>Déjà inscrit ?</h1>
 
@@ -37,4 +43,8 @@
         </form>
 
     </div>
+    <?php include "assets/templates/footer.html" ?>
 
+</body>
+
+</html>

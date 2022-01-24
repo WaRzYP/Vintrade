@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,85 +8,85 @@
     <link rel="stylesheet" href="style.css">
     <title>Vintrade</title>
 </head>
+
 <body>
 
 
-
-<!-- <?php include("header.html"); ?> -->
-
-
-
-<?php 
-
-
-$id = $_GET['id_annonce'];
+    <!-- Récupère le header et l'affiche sur la page -->
+    <?php include("header.html"); ?>
 
 
 
- require("assets/bdd/bddconfig.php");
-  
- try{
- 
-     $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
-
-     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-     $recup = $objBdd->query("SELECT * FROM `annonces` WHERE `id_annonce` = $id ");
-
- }catch( Exception $prmE){
+    <?php
 
 
-     die("ERREUR : " . $prmE->getMessage());
-
- }
-
-?>
+    $id = $_GET['id_annonce'];
 
 
-<?php
 
-    while($messageSimple = $recup->fetch()){
+    require("assets/bdd/bddconfig.php");
 
-?>
+    try {
 
-    <div class="box">
-        
+        $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
 
-        <div class="div-image">
+        $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            <img src="assets/upload/<?php echo $messageSimple['image'] ?>" alt="image" >
+        $recup = $objBdd->query("SELECT * FROM `annonces` WHERE `id_annonce` = $id ");
+    } catch (Exception $prmE) {
+
+
+        die("ERREUR : " . $prmE->getMessage());
+    }
+
+    ?>
+
+
+    <?php
+
+    while ($messageSimple = $recup->fetch()) {
+
+    ?>
+
+        <div class="box">
+
+
+            <div class="div-image">
+
+                <img src="assets/upload/<?php echo $messageSimple['image'] ?>" alt="image">
+
+            </div>
+
+
+            <div class="pseudo-date">
+
+                <h2> <?php echo stripslashes($messageSimple["titre"]); ?> </h2>
+
+                <p> <?php echo $messageSimple["date"]; ?> </p>
+            </div>
+            <div class="message">
+
+                <p> <?php echo stripslashes($messageSimple["description"]); ?></p>
+
+                <a href="delete_message.php?id=<?php echo $messageSimple["id_annonce"] ?>">Supprimer</a>
+
+                <a href="formulaire_update.php?id=<?php echo $messageSimple["id_annonce"] ?>">Modifier</a>
+
+            </div>
 
         </div>
 
 
-        <div class="pseudo-date">
-           
-            <h2> <?php echo stripslashes($messageSimple["titre"]); ?> </h2>
-            
-            <p> <?php echo $messageSimple["date"]; ?> </p>
-        </div>
-        <div class="message">
-            
-            <p> <?php echo stripslashes($messageSimple["description"]); ?></p>
-            
-            <a href="delete_message.php?id=<?php echo $messageSimple["id_annonce"] ?>">Supprimer</a>
-
-            <a href="formulaire_update.php?id=<?php echo $messageSimple["id_annonce"] ?>">Modifier</a>
-        
-        </div>
-
-    </div>
+    <?php
+    }
+    ?>
 
 
-<?php 
-}
-?>
+    <!-- recupère le footer et l'affiche sur notre page -->
+    <?php include("footer.html"); ?>
 
 
-<!-- recupère le footer et l'affiche sur notre page -->
-<!-- <?php include("footer.html"); ?> -->
 
-
-    
 </body>
+
 </html>
