@@ -15,7 +15,6 @@ if ($nom != "" && $prenom != "" && $pseudo != ""  && $email != ""  && $password_
 
     if ($password_clair == $confirm_password) {
 
-
         $hash_password = password_hash($password_clair, PASSWORD_BCRYPT);
 
         require("bddconfig.php");
