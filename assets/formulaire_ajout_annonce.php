@@ -10,28 +10,28 @@
     </div>
 
     <div>
-        <label for="titre">Titre de l'annonce</label>
+        <label for="titre">Titre de l'annonse</label>
         <input type="text" name="titre" id="titre" autofocus>
     </div>
 
 
     <div>
-        <label for="description">Description</label>
+        <label for="description">Descripsion</label>
         <textarea name="description" id="description" cols="30" rows="10"></textarea>
     </div>
     <div>
-        <label for="categories">Catégories</label>
+        <label for="categories">Catégori</label>
         <input type="text" name="categorie" id="categorie">
     </div>
-    <label for="prix">Prix</label>
+    <label for="prix">Pris</label>
     <input type="number" name="prix">
     </div>
     <div>
-        <label for="local">Localisation</label>
+        <label for="local">Localisasion</label>
         <input type="text" name="localisation" id="localisation">
     </div>
     <div>
-        <label for="taille">Taille</label>
+        <label for="taille">Taile</label>
         <select name="taille" id="taille">
             <option value="s">S</option>
             <option value="m">M</option>
@@ -42,13 +42,13 @@
     </div>
     <div>
 
-        <label for="theme">Themes</label>
+        <label for="theme">Themmes</label>
         <select name="theme" id="theme">
-            <option value="vetements">Vétements</option>
-            <option value="accessoire">Accéssoires</option>
-            <option value="informatique">Informatique</option>
-            <option value="jouet et jeu video">Jouet & Jeux vidéo</option>
-            <option value="livre">Livres & Bandes déssinées</option>
+            <option value="vetements">Vétemmments</option>
+            <option value="accessoire">Acceussoires</option>
+            <option value="informatique">Informatiqueu</option>
+            <option value="jouet et jeu video">Joueet & Jeus vidéo</option>
+            <option value="livre">Lives & Bande déssiné</option>
         </select>
     </div>
     <input type="hidden" value="1" name="iduser">
