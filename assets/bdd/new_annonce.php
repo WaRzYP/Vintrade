@@ -9,6 +9,7 @@ $size = $_FILES['file']['size'];
 $error = $_FILES['file']['error'];
 
 $titre = htmlspecialchars($_POST["titre"]);
+
 $description = htmlspecialchars($_POST["description"]);
 $prix = htmlspecialchars($_POST["prix"]);
 $localisation = htmlspecialchars($_POST["localisation"]);
@@ -21,6 +22,7 @@ require("bddconfig.php");
 
 
 try{
+
 
     // explode sépare la chaine => ( image.jpg -> ["image", "jpg"] ) Agis comme un split(".") en js 
     $tabExtension = explode('.', $name);
@@ -57,6 +59,7 @@ try{
         $PDOinsert->bindParam(':iduser' , $iduser , PDO::PARAM_STR);
     
         $PDOinsert->execute();
+
 
 
         header('Location: ../../index.php');

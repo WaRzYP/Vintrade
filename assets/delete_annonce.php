@@ -12,6 +12,7 @@ try{
     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     
+
     $recup = $objBdd->query("DELETE FROM `annonces` WHERE `id_annonce` = $id ");
 
     

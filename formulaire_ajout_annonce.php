@@ -8,12 +8,13 @@
         <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
         <label for="file">*(max 1Mo) </label>
     </div>
-    
+
     <div>
         <label for="titre">Titre de l'annonce</label>
         <input type="text" name="titre" id="titre" autofocus>
     </div>
-    
+
+
     <div>
         <label for="description">Description</label>
         <textarea name="description" id="description" cols="30" rows="10"></textarea>
@@ -24,9 +25,9 @@
     </div>
     <label for="prix">Prix</label>
     <input type="number" name="prix">
-</div>
-<div>
-    <label for="local">Localisation</label>
+    </div>
+    <div>
+        <label for="local">Localisation</label>
         <input type="text" name="localisation" id="localisation">
     </div>
     <div>
@@ -40,6 +41,7 @@
         </select>
     </div>
     <div>
+
         <label for="theme">Themes</label>
         <select name="theme" id="theme">
             <option value="vetements">Vétements</option>
@@ -53,7 +55,7 @@
     <div>
         <input type="submit" value="Envoyer">
     </div>
-    
+
 </form>
 
 <script src="assets/js/script_annonces.js"></script>

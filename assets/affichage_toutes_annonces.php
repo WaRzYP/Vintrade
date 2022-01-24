@@ -11,6 +11,7 @@ try{
     
     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
+
     $recup = $objBdd->query("SELECT * FROM `annonces` ORDER BY date DESC ");
 
 }catch( Exception $prmE){
@@ -23,6 +24,7 @@ try{
 
 ?>
 <?php 
+
 
 
 require("assets/bdd/bddconfig.php");
@@ -69,12 +71,14 @@ try{
         
         <div class="pseudo-date">
             
+
             <h2> <?php echo stripslashes($messageSimple["titre"]); ?> </h2>
             
             <p> <?php echo $messageSimple["date"]; ?> </p>
         </div>
         <div class="message">
             
+
             <p> <?php echo stripslashes($messageSimple["description"]); ?></p>
             <p> <?php echo stripslashes($messageSimple["price"]); ?></p>
             
