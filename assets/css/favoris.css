@@ -1,0 +1,45 @@
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-weight: bolder;
+    margin: 10px 0 10px 0;
+}
+
+.content-favoris{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box{
+    box-shadow: 8px 3px 6px 2px #979797;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.descri{
+    width: 40%;
+}
+
+.polo{
+    align-items: center;
+    display: flex;
+}
+
