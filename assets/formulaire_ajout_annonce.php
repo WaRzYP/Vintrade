@@ -1,9 +1,9 @@
 <head>
-    <link rel="stylesheet" href="assets/css/annonces.css">
+    <link rel="stylesheet" href="css/annonces.css">
 </head>
 
 <!-- CRUD -->
-<form method="POST" action="assets/bdd/new_annonce.php" enctype="multipart/form-data">
+<form method="POST" action="bdd/new_annonce.php" enctype="multipart/form-data">
     <div>
         <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
         <label for="file">*(max 1Mo) </label>
@@ -58,4 +58,4 @@
 
 </form>
 
-<script src="assets/js/script_annonces.js"></script>
+<script src="js/script_annonces.js"></script>

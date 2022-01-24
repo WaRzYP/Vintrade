@@ -11,7 +11,6 @@
 
 <body>
 
-    <?php include "assets/templates/header.html" ?>
 
     <h1>Pas encore inscrit ?</h1>
 
@@ -63,8 +62,7 @@
     </div>
 
 
-    <?php include "assets/templates/footer.html" ?>
-    <script src="assets/js/valid_form_inscription.js"></script>
+    <script src="js/valid_form_inscription.js"></script>
 </body>
 
 </html>

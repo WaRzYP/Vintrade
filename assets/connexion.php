@@ -12,8 +12,6 @@
 
 <body>
 
-    <?php include "assets/templates/header.html" ?>
-
     <h1>Déjà inscrit ?</h1>
 
     <div class="connexion-box">
@@ -43,7 +41,6 @@
         </form>
 
     </div>
-    <?php include "assets/templates/footer.html" ?>
 
 </body>
 
