@@ -18,29 +18,29 @@
 
         <h2>Connexion</h2>
 
-        <form method="POST" action="assets/bdd/connexion_action.php">
+        <form method="POST" id="form" action="assets/bdd/connexion_action.php">
 
             <div class="user-box">
-                <input type="text" name="" required="">
+                <input type="text" name="email" required>
                 <label>Email</label>
             </div>
 
             <div class="user-box">
-                <input type="password">
+                <input name="mdp" type="password">
                 <label for="">Mot de passe</label>
             </div>
 
-            <a href="">
+            <button type="submit" >
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 Se connecter
-            </a>
-
+            </button>
         </form>
 
     </div>
+
 
 </body>
 

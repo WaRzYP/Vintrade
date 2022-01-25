@@ -31,7 +31,7 @@ try{
             if (password_verify($password_clair, $row_userweb['mdp'])) {
 
                 $session_data = array(
-                    'id_users' => $row_userweb['id_users'],
+                    'id_user' => $row_userweb['id_user'],
                     'avatar' => $row_userweb['avatar'],
                     'pseudo' => $row_userweb['pseudo'],
                     'prenom' => $row_userweb['prenom'],  

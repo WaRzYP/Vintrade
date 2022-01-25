@@ -71,11 +71,12 @@ h1{
 }
 
 /* bouton "se connecter" */
-.connexion-box form a {
+.connexion-box form button {
 	position: relative;
 	display: inline-block;
 	padding: 10px 20px;
 	color: #9D4EDD;
+	background-color: transparent;
 	font-size: 16px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -87,7 +88,7 @@ h1{
 
 
 /* Hover du bouton "se connecter" */
-.connexion-box form a:hover {
+.connexion-box form button:hover {
 	background: #E0AAFF;
 	color: #F1EEE6;
 	border-radius: 5px;
@@ -100,12 +101,12 @@ h1{
 
 
 /* Animation du bouton "se connecter" */
-.connexion-box a span {
+.connexion-box button span {
 	position: absolute;
 	display: block;
 }
 
-.connexion-box a span:nth-child(1) {
+.connexion-box button span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;

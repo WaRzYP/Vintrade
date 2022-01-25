@@ -57,13 +57,13 @@ if( $verif_co != 0){
                 <label for="">Confirmer Mot de passe *</label>
             </div>
 
-            <a id="inscription" href="#">
+            <button type="submit" >
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 S'inscrire
-            </a>
+            </button>
 
         </form>
 

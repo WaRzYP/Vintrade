@@ -17,6 +17,8 @@ $taille = htmlspecialchars($_POST["taille"]);
 $theme = htmlspecialchars($_POST["theme"]);
 $iduser = htmlspecialchars($_POST["iduser"]);
 
+// echo $error;
+// die($error);
 
 require("bddconfig.php");
 
@@ -46,7 +48,7 @@ try {
         move_uploaded_file($tmpName, '../upload/' . $file_afterverif);
 
 
-        $PDOinsert = $objBdd->prepare("INSERT INTO `annonces` (`titre`, `description`,`price`,`localisation`,`taille`,`themes`,`image`,`id_users`) VALUES
+        $PDOinsert = $objBdd->prepare("INSERT INTO `annonces` (`titre`, `description`,`price`,`localisation`,`taille`,`theme`,`image`,`id_user`) VALUES
         (:titre , :description, :price, :localisation, :taille, :theme, :image, :iduser) ");
 
         $PDOinsert->bindParam(':titre', $titre, PDO::PARAM_STR);
@@ -62,7 +64,7 @@ try {
 
 
 
-        header('Location: index.php?page=accueil');
+        header('Location: ../../index.php?page=accueil');
     }
 } catch (Exception $prmE) {
 
