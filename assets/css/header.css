@@ -4,7 +4,7 @@
   font-family: Poppins, sans-serif;
 }
 nav{
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   background-color: white;
   position: sticky;
@@ -59,6 +59,13 @@ nav a{
 .sous a{
   padding: 10px;
   background-color: RGBa(200,200,200,0.8);
+}
+
+
+
+.btn {
+  border: #CCC;
+  
 }
 
 @media screen and (min-width: 980px){

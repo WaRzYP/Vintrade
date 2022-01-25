@@ -16,7 +16,10 @@
 
     <div class="connexion-box">
 
-        <h2>Connexion</h2>
+        <div class="content-form">
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+        </div>
 
         <form method="POST" id="form" action="assets/bdd/connexion_action.php">
 
@@ -30,7 +33,7 @@
                 <label for="">Mot de passe</label>
             </div>
 
-            <button type="submit" >
+            <button type="submit">
                 <span></span>
                 <span></span>
                 <span></span>
