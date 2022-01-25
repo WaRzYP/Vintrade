@@ -21,7 +21,7 @@ $iduser = htmlspecialchars($_POST["iduser"]);
 require("bddconfig.php");
 
 
-try{
+try {
 
 
     // explode sépare la chaine => ( image.jpg -> ["image", "jpg"] ) Agis comme un split(".") en js 
@@ -33,40 +33,39 @@ try{
     //Va permettre la vérification de la taille (ici c'est la taille a ne pas dépasser)
     $maxSize = 10000000;
 
-    $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
-   
+    $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+
     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    if(in_array($extension, $extensions) && $size <= $maxSize && $error == 0){
+    if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {
         //Avoir un nom unique par fichier
         $uniqueName = uniqid('', true);
         // on "créer" le nom du fichier 
-        $file_afterverif = $uniqueName.".".$extension;
+        $file_afterverif = $uniqueName . "." . $extension;
         // Déplace le fichier vers notre dossier upload
-        move_uploaded_file($tmpName, '../upload/'.$file_afterverif);
+        move_uploaded_file($tmpName, '../upload/' . $file_afterverif);
 
 
         $PDOinsert = $objBdd->prepare("INSERT INTO `annonces` (`titre`, `description`,`price`,`localisation`,`taille`,`themes`,`image`,`id_users`) VALUES
         (:titre , :description, :price, :localisation, :taille, :theme, :image, :iduser) ");
 
-        $PDOinsert->bindParam(':titre' , $titre , PDO::PARAM_STR);
-        $PDOinsert->bindParam(':description' , $description , PDO::PARAM_STR);
-        $PDOinsert->bindParam(':image' , $file_afterverif , PDO::PARAM_STR);
-        $PDOinsert->bindParam(':price' , $prix , PDO::PARAM_STR);
-        $PDOinsert->bindParam(':localisation' , $localisation , PDO::PARAM_STR);
-        $PDOinsert->bindParam(':taille' , $taille , PDO::PARAM_STR);
-        $PDOinsert->bindParam(':theme' , $theme , PDO::PARAM_STR);
-        $PDOinsert->bindParam(':iduser' , $iduser , PDO::PARAM_STR);
-    
+        $PDOinsert->bindParam(':titre', $titre, PDO::PARAM_STR);
+        $PDOinsert->bindParam(':description', $description, PDO::PARAM_STR);
+        $PDOinsert->bindParam(':image', $file_afterverif, PDO::PARAM_STR);
+        $PDOinsert->bindParam(':price', $prix, PDO::PARAM_STR);
+        $PDOinsert->bindParam(':localisation', $localisation, PDO::PARAM_STR);
+        $PDOinsert->bindParam(':taille', $taille, PDO::PARAM_STR);
+        $PDOinsert->bindParam(':theme', $theme, PDO::PARAM_STR);
+        $PDOinsert->bindParam(':iduser', $iduser, PDO::PARAM_STR);
+
         $PDOinsert->execute();
 
 
 
-        header('Location: ../../index.php');
+        header('Location: index.php?page=accueil');
     }
-}catch( Exception $prmE){
+} catch (Exception $prmE) {
 
 
     die("ERREUR : " . $prmE->getMessage());
-
 }
