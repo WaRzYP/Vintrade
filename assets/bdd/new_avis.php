@@ -1,5 +1,5 @@
 <?php
-
+$id_suivi = $_GET["id_suivi"];
 // On récupère le pseudo du formulaire et va le convertir en chaine  
 $pseudo = htmlspecialchars($_POST["pseudo"]);
 // On récupère le pseudo du message et va le convertir en chaine  
@@ -11,22 +11,30 @@ require("bdd/bddconfig.php");
 // try va essayer le code avant de l'executer si erreur va dans le catch
 try{
 
-    // Connecte a la base mysql
-    $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
-    // En cas de problème renvoie dans le catch avec l'erreur
-    $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    if($id_suivi != $_SESSION["logged_in"]['id_user'] ){
 
-    // ici on prepare notre requête SQL
-    $PDOinsert = $objBdd->prepare("INSERT INTO `avis` (`pseudo`, `message`) VALUES (:pseudo , :messageAdd) ");
-    // on initialise notre :pseudo avec la variable qui récup le pseudo
-    $PDOinsert->bindParam(':pseudo' , $pseudo , PDO::PARAM_STR);
-    // on initialise notre :messageAdd avec la variable qui récup le messageAdd
-    $PDOinsert->bindParam(':messageAdd' , $messageAdd , PDO::PARAM_STR);
-    // execute la requête SQL
-    $PDOinsert->execute();
+     // Connecte a la base mysql
+     $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
+     // En cas de problème renvoie dans le catch avec l'erreur
+     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ 
+     // ici on prepare notre requête SQL
+     $PDOinsert = $objBdd->prepare("INSERT INTO `avis` (`pseudo`, `message`) VALUES (:pseudo , :messageAdd) ");
+     // on initialise notre :pseudo avec la variable qui récup le pseudo
+     $PDOinsert->bindParam(':pseudo' , $pseudo , PDO::PARAM_STR);
+     // on initialise notre :messageAdd avec la variable qui récup le messageAdd
+     $PDOinsert->bindParam(':messageAdd' , $messageAdd , PDO::PARAM_STR);
+     // execute la requête SQL
+     $PDOinsert->execute();
+ 
+     // Renvoie sur la page index.php 
+     
+    }else{
+        header('Location: index.php');
+    }
+    
 
-    // Renvoie sur la page index.php 
-    header('Location: index.php');
+   
 
 }catch( Exception $prmE){
 

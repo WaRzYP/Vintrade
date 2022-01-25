@@ -9,27 +9,114 @@
 </head>
 <body>
 
-<?php include ('assets/affichage_commentaire.php'); ?>
+<?php 
+
+// On recupère le fichier avec les configuration de la base de données 
+
+require("bdd/bddconfig.php");
+
+// Récupération des avis des autres utilisateurs
+
+try{
+    $id_user = $_GET["id_user"];
+    // Connecte a la base mysql
+    $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+    // En cas de problème renvoie dans le catch avec l'erreur
+    $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // ici on prepare notre requête SQL
+    $recup = $objBdd->query("SELECT * FROM `users` WHERE users.id_user = $id_user");
+
+    
 
 
-    <div class="content-description">
-        <div class="content-avatar">
-            <div class="avatar"></div>
-            <div class="pseudo-avis">
-                <p>Baptiste.L</p>
-                <p>Avis des utilisateurs : ***** (155 évaluations) </p>
-            </div>
+}catch( Exception $prmE){
+
+    // Affiche le message d'erreur
+    die("ERREUR : " . $prmE->getMessage());
+
+}
+?>
+<div class="content-profil">
+        <?php 
+            while($messageSimple = $recup->fetch()){   
+        ?>        
+
+        <div class="box">
+           
+            <?php echo stripslashes($messageSimple["pseudo"]) ?>    
+                
+            <?php echo stripslashes($messageSimple["avatar"]) ?>     
+
+            <?php echo stripslashes($messageSimple["description"]) ?>
+               
         </div>
 
-        <div class="description-profil">
-            <p>À propos : </p>
-            <p>Toulouse, France</p>
-            <p>xxx abonnés, xxx abonnements.</p>
-            <p>Description de l'utilisateur : </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque rerum minima nam deleniti, omnis cupiditate voluptatem laudantium alias, incidunt officia voluptatibus perferendis excepturi eum asperiores fuga, eligendi laboriosam dolorum porro!
-            Enim soluta accusantium omnis nulla assumenda quam officiis tempora quis obcaecati ea quibusdam unde laboriosam voluptas, aspernatur quasi laborum magnam dolor harum! Qui aliquam expedita adipisci dicta rem itaque perferendis.</p>
+            <?php 
+            }
+            ?>
+
+
+<?php 
+
+// On recupère le fichier avec les configuration de la base de données 
+
+require("bdd/bddconfig.php");
+
+// Récupération des avis des autres utilisateurs
+
+try{
+    $id_user = $_GET["id_user"];
+    // Connecte a la base mysql
+    $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+    // En cas de problème renvoie dans le catch avec l'erreur
+    $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // ici on prepare notre requête SQL
+    $recup = $objBdd->query("SELECT * FROM `users`,`avis` WHERE avis.id_envoie = users.id_user AND users.id_user = $id_user");
+
+    
+
+
+}catch( Exception $prmE){
+
+    // Affiche le message d'erreur
+    die("ERREUR : " . $prmE->getMessage());
+
+}
+?>
+
+<div class="content-favoris">
+        <?php 
+            while($messageSimple = $recup->fetch()){   
+        ?>        
+
+        <div class="box">
+           
+            <?php echo stripslashes($messageSimple["pseudo"]) ?>    
+                
+            <?php echo stripslashes($messageSimple["avatar"]) ?>     
+
+            <?php echo stripslashes($messageSimple["message"]) ?>
+               
+
+
         </div>
-    </div>
+            <?php 
+            }
+            ?>
+</div>
+
+<div class="form-new-avis">
+        <form method="POST" id="avis" action="assets/bdd/new_avis.php">
+            <textarea name="" id="" cols="50" rows="5">Écris ton avis sur le vendeur ...</textarea>   
+        </form>
+         
+        <input type="submit" value="envoyer">
+
+
+</div>
+
+
+
 
 </body>
 </html>
