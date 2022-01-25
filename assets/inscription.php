@@ -62,7 +62,7 @@
     </div>
 
 
-    <script src="js/valid_form_inscription.js"></script>
+    <script src="assets/js/valid_form_inscription.js"></script>
 </body>
 
 </html>

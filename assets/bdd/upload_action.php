@@ -18,9 +18,9 @@ $error = $_FILES['file']['error'];
 // echo $error;
 
 
-try{
+try {
 
-    if(isset($_FILES['file'])){
+    if (isset($_FILES['file'])) {
 
         // explode sépare la chaine => ( image.jpg -> ["image", "jpg"] ) Agis comme un split(".") en js 
         $tabExtension = explode('.', $name);
@@ -30,21 +30,21 @@ try{
         $extensions = ['jpg', 'png', 'jpeg', 'gif'];
         //Va permettre la vérification de la taille (ici c'est la taille a ne pas dépasser)
         $maxSize = 10000000;
-        
+
         //Verif si le fichier avec nos variables de verif au dessus
-        if(in_array($extension, $extensions) && $size <= $maxSize && $error == 0){
+        if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {
 
             // recup les config bdd 
             require("bddconfig.php");
-    
+
             //Avoir un nom unique par fichier
             $uniqueName = uniqid('', true);
             // on "créer" le nom du fichier 
-            $file = $uniqueName.".".$extension;
+            $file = $uniqueName . "." . $extension;
             // Déplace le fichier vers notre dossier upload
-            move_uploaded_file($tmpName, '../upload/'.$file);
+            move_uploaded_file($tmpName, '../upload/' . $file);
             // Connecte a la base mysql
-            $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
+            $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
             // En cas de problème renvoie dans le catch avec l'erreur
             $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // ici on prepare notre requête SQL
@@ -54,20 +54,16 @@ try{
             // execute la requête SQL
             $PDOInsertFile->execute();
             //Renvoie sur la page d'accueil
-            header("Location: ../index.php");
-
-        }else{
+            header("Location: index.php?page=accueil");
+        } else {
             //Renvoie sur la page d'accueil
-            header("Location: ../index.php");
+            header("Location: index.php?page=accueil");
         }
-
-    }else{
+    } else {
         //Renvoie sur la page d'accueil
-        header("Location: ../index.php");
+        header("Location: index.php?page=accueil");
     }
-
-}catch(Exception $prmE){
+} catch (Exception $prmE) {
     //Affiche un message d'erreur
-    die('Erreur : '.$prmE->getMessage());
-    
+    die('Erreur : ' . $prmE->getMessage());
 }

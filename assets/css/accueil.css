@@ -1,0 +1,38 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+    font-family: 'Poppins', sans-serif;}
+
+.image_annonce{
+
+    width: 200px;
+}
+
+.titre{
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.pseudo{
+    font-size: 20px;
+}
+
+.content-comment{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 100px;
+}
+
+
+
+.image{
+    width: 200px;
+}
+
+.comment{
+    width: 300px;
+    text-align: center;
+}
