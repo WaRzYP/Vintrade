@@ -1,7 +1,144 @@
-body {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items:center;
-    flex-wrap: wrap;
-}
+	html{
+		height: 100vh;
+		}
+
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: 'Arial', sans-serif;
+	}
+
+
+	h1 {
+		text-align: center;
+		margin-top: 30px;
+	}
+	.images {
+		background-color: rgba(111, 111, 111, 0.5);
+		width: 80%;
+		height: 200px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	.formulaire {
+		margin: auto;
+		margin-top: 30px;
+		margin-bottom: 200px;
+		top: 75%;
+		left: 50%;
+		width: 100%;
+		padding: 40px;
+		box-sizing: border-box;
+		border-radius: 10px;
+		text-align: center;
+	}
+	.formulaire form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	label {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		top: 0;
+		left: 0;
+		padding: 10px 0;
+		font-size: 16px;
+		pointer-events: none;
+		transition: .5s;
+		
+	}
+	.user {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	.user label {
+		text-align: start;
+	}
+	.user input,.user textarea,.user select {
+		width: 300px;
+		-webkit-box-shadow: -1px 6px 8px -6px #000000; 
+		box-shadow: -1px 6px 8px -6px #000000;
+	}
+	.user label {
+		text-decoration: underline 3px #9D4EDD;
+	}
+	#titre {
+		margin-right: 24px;
+	}
+	#taille{
+		margin-left: 60px;
+		width: 305px;
+	}
+	#theme{
+		margin-left: 50px;
+		width: 305px;
+	}
+	#prix {
+		margin-left: 55px;
+	}
+	#description {
+		margin-right: 5px;
+	}
+	.validation input {
+		animation: wiggle 2s linear infinite;
+	}
+	
+	/* Keyframes */
+	@keyframes wiggle {
+		0%, 7% {
+		transform: rotateZ(0);
+		}
+		15% {
+		transform: rotateZ(-15deg);
+		}
+		20% {
+		transform: rotateZ(10deg);
+		}
+		25% {
+		transform: rotateZ(-10deg);
+		}
+		30% {
+		transform: rotateZ(6deg);
+		}
+		35% {
+		transform: rotateZ(-4deg);
+		}
+		40%, 100% {
+		transform: rotateZ(0);
+		}
+	}
+	
+	
+	.validation input{
+		left: calc(50% - 3em);
+		top: calc(50% - 2em);
+		margin-top: 35px;
+		height: 4em;
+		width: 250px;
+		background: #9D4EDD;
+		background: linear-gradient(top, #555, #333);
+		border: none;
+		border-top: 3px solid #fff;
+		border-radius: 0 0 0.2em 0.2em;
+		color: #fff;
+		font-family: Helvetica, Arial, Sans-serif;
+		font-size: 1em;
+		transform-origin: 50% 5em;
+	}
+
+
+
