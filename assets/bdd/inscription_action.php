@@ -43,12 +43,12 @@ if ($nom != "" && $prenom != "" && $pseudo != ""  && $email != ""  && $password_
 
             $PDOinsertuserweb->execute();
 
-            // header("Location: ../../index.php");
+            header("Location: ../../index.php");
 
         } catch (Exception $prmE) {
             die('Erreur : ' . $prmE->getMessage());
         }
     }
 } else {
-    // header("Location: ../../index.php?page=inscription");
+    header("Location: ../../index.php?page=inscription");
 }

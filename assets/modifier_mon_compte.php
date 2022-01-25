@@ -1,32 +1,23 @@
-<?php
-
-
-if( $verif_co != 0){
-    
-    header("Location: index.php");
-    
-}
-
-?>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-    <link rel="stylesheet" href="assets/css/inscription.css">
+    <title>Modifier son compte</title>
+    <link rel="stylesheet" href="assets/css/modifier_mon_compte.css">
 </head>
 
 <body>
 
 
-    <h1>Pas encore inscrit ?</h1>
+    <h1>Modifier son compte</h1>
 
     <div class="connexion-box">
 
-        <h2>Inscription</h2>
 
-        <form method="POST" id="form" action="assets/bdd/inscription_action.php">
+        <form method="POST" id="form" action="assets/bdd/update_compte.php">
 
             <div class="user-box">
                 <input type="text" name="nom" required="required">
@@ -42,6 +33,7 @@ if( $verif_co != 0){
                 <input type="text" name="pseudo" required="required">
                 <label>Pseudo *</label>
             </div>
+
             <div class="user-box">
                 <input type="text" name="email" required="required">
                 <label>Email *</label>
@@ -62,13 +54,15 @@ if( $verif_co != 0){
                 <span></span>
                 <span></span>
                 <span></span>
-                S'inscrire
+                Enregistrer
             </a>
 
         </form>
 
     </div>
 
+
     <script src="js/valid_form_inscription.js"></script>
 </body>
 
+</html>
