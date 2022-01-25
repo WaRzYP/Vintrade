@@ -10,7 +10,7 @@
         <h3>Connexion</h3>
 
         <div class="content-form">
-            <label for="email">Email *</label>
+            <label for="email">Email</label>
             <input type="email" name="email" required>
         </div>
 

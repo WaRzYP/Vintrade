@@ -91,77 +91,20 @@
         </ul>
       </li>
       <li class="deroulant">
-        <div class="recherche">
-        <label for="site-search">Recherche</label>
-<input type="search" id="site-search" name="q"
-       aria-label="Search through site content">
+  <div class="recherche">
+<input type="search" id="site-search"  placeholder="Recherche" name="q"
+       aria-label="Search through site content" class="btn">
 
-<button></button>
+<button><span class="iconify" data-icon="bx:bx-search-alt-2"></span></button>
 </div>
+</li>
+      
     </ul>
   </div>
 </nav>
 
 
-    <nav>
-      <div class="conteneur-nav">
-        <label for="mobile">Afficher / Cacher le menu</label>
-        <input type="checkbox" id="mobile" role="button">
-        <ul>
-          <li class="deroulant"><a href="#">Hommes</a>
-            <ul class="sous">
-              <li><a href="#">Voir tout</a></li>
-              <li><a href="#">Vêtements</a></li>
-              <li><a href="#">Acessoires</a></li>
-              <li><a href="#">Chaussures</a></li>
-              <li><a href="#">Soins</a></li>
-            </ul>
-          </li>
-          <li class="deroulant"><a href="#">Femmes</a>
-            <ul class="sous">
-              <li><a href="#">Voir tout</a></li>
-              <li><a href="#">Vêtements</a></li>
-              <li><a href="#">Chaussures</a></li>
-              <li><a href="#">Sacs</a></li>
-              <li><a href="#">Beauté</a></li>
-              <li><a href="#">Acessoires</a></li>
-            </ul>
-          </li>
-          <li class="deroulant"><a href="#">Enfants</a>
-            <ul class="sous">
-              <li><a href="#">Voir tout</a></li>
-              <li><a href="#">Jeux & Jouets</a></li>
-              <li><a href="#">Fille</a></li>
-              <li><a href="#">Garçon</a></li>
-              <li><a href="#">Soins bébé</a></li>
-              <li><a href="#">Garçon</a></li>
-            </ul>
-          </li>
-          <li class="deroulant"><a href="#">Meubles</a>
-            <ul class="sous">
-              <li><a href="#">Voir tout</a></li>
-              <li><a href="#">Mobiliers</a></li>
-              <li><a href="#">Art de la table</a></li>
-              <li><a href="#">Jardin</a></li>
-              <li><a href="#">Décoration</a></li>
-
-            </ul>
-          </li>
-          <li class="deroulant"><a href="#">Informatique</a>
-            <ul class="sous">
-              <li><a href="#">Voir tout</a></li>
-              <li><a href="#">PC & PC Portable</a></li>
-              <li><a href="#">Gaming</a></li>
-              <li><a href="#">Composants</a></li>
-              <li><a href="#">Matériels</a></li>
-
-            </ul>
-          </li>
-
-        </ul>
-      </div>
-    </nav>
-
+   
 
   </header>
   <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
