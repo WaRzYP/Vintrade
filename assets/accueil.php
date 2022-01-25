@@ -28,7 +28,7 @@
         $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-        $recup = $objBdd->query("SELECT * FROM `annonces`,`users` WHERE annonces.id_users = users.id_users ORDER BY date DESC ");
+        $recup = $objBdd->query("SELECT * FROM `annonces`,`users` WHERE annonces.id_user = users.id_user ORDER BY date DESC ");
     } catch (Exception $prmE) {
 
 
