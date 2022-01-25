@@ -1,3 +1,9 @@
+<? echo "Bonjour". $_SESSION['logged_in']['pseudo'] ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +89,14 @@
 
         </ul>
       </li>
-      
+      <li class="deroulant">
+        <div class="recherche">
+        <label for="site-search">Recherche</label>
+<input type="search" id="site-search" name="q"
+       aria-label="Search through site content">
+
+<button></button>
+</div>
     </ul>
   </div>
 </nav>
