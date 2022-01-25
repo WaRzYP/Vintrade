@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<?php include ('assets/affichage_commentaire.php'); ?>
+
 
     <div class="content-description">
         <div class="content-avatar">
@@ -28,19 +30,6 @@
             Enim soluta accusantium omnis nulla assumenda quam officiis tempora quis obcaecati ea quibusdam unde laboriosam voluptas, aspernatur quasi laborum magnam dolor harum! Qui aliquam expedita adipisci dicta rem itaque perferendis.</p>
         </div>
     </div>
-
-<div class="content-article">
-
-    
-
-
-
-
-
-
-
-
-</div>
 
 </body>
 </html>
