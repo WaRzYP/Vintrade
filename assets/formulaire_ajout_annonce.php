@@ -1,37 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="css/annonces.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/annonces.css">
+
+    <title>Ajoutez une annonce - Vintrade</title>
 </head>
 
+<body>
+
 <!-- CRUD -->
+
+<h1>Veuillez remplir les champs suivants</h1>
+<div class="formulaire">
 <form method="POST" action="bdd/new_annonce.php" enctype="multipart/form-data">
-    <div>
-        <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
-        <label for="file">*(max 1Mo) </label>
+    <div class="images">
+</label>
+
+<input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
+        <label for="file">*(max 5Mo) </label>
     </div>
 
-    <div>
-        <label for="titre">Titre de l'annonse</label>
+    <div class="user">
+        <label for="titre">Titre de l'annonce</label>
         <input type="text" name="titre" id="titre" autofocus>
     </div>
 
 
-    <div>
-        <label for="description">Descripsion</label>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+    <div class="user">
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="20" rows="5"></textarea>
     </div>
-    <div>
-        <label for="categories">Catégori</label>
-        <input type="text" name="categorie" id="categorie">
+    <div class="user"> 
+        <label for="categorie">Catégories</label>
+        <select name="categorie" id="categorie">
+            <option value="t-shirt">T-shirts</option>
+            <option value="sweat">Sweat-shirts</option>
+            <option value="gilet">Gilets</option>
+            <option value="jean">Jeans</option>
+            <option value="accessoire">Accéssoires</option>
+            <option value="chaussure">Chaussures</option>
+        </select>
     </div>
-    <label for="prix">Pris</label>
-    <input type="number" name="prix">
+    <div class="user">
+    <label for="prix">Prix</label>
+    <input type="number" name="prix" id="prix">
     </div>
-    <div>
-        <label for="local">Localisasion</label>
+    <div class="user">
+        <label for="local">Localisation</label>
         <input type="text" name="localisation" id="localisation">
     </div>
-    <div>
-        <label for="taille">Taile</label>
+    <div class="user"> 
+        <label for="taille">Taille</label>
         <select name="taille" id="taille">
             <option value="s">S</option>
             <option value="m">M</option>
@@ -40,22 +63,26 @@
             <option value="xxl">XXL</option>
         </select>
     </div>
-    <div>
+    <div class="user">
 
-        <label for="theme">Themmes</label>
+        <label for="theme">Themes</label>
         <select name="theme" id="theme">
-            <option value="vetements">Vétemmments</option>
-            <option value="accessoire">Acceussoires</option>
-            <option value="informatique">Informatiqueu</option>
-            <option value="jouet et jeu video">Joueet & Jeus vidéo</option>
-            <option value="livre">Lives & Bande déssiné</option>
+            <option value="vetements">Vétements</option>
+            <option value="accessoire">Accéssoires</option>
+            <option value="informatique">Informatique</option>
+            <option value="jouet et jeu video">Jouet & Jeux vidéo</option>
+            <option value="livre">Livres & Bandes déssinées</option>
         </select>
     </div>
     <input type="hidden" value="1" name="iduser">
-    <div>
+    <div class="validation">
         <input type="submit" value="Envoyer">
-    </div>
+    </div>  
 
 </form>
+</div>
+</body>
 
 <script src="js/script_annonces.js"></script>
+<script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+</html>
