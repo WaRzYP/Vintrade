@@ -14,6 +14,8 @@
 
 <body>
 
+    <?php echo '<p class="bonjour">' . "Bonjour, " . '<span class="bonjour-pseudo">' . $_SESSION['logged_in']['pseudo'] . '</span>' . " voici les annonces du moment : " . '</p>'   ?>
+
     <?php
 
 

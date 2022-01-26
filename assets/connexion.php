@@ -17,8 +17,8 @@
     <div class="connexion-box">
 
         <div class="content-form">
-            <label for="email">Email</label>
-            <input type="email" name="email" required>
+            <label id="btnHidden" for=" email">Email</label>
+            <input id="btnHidden" type="email" name="email" required>
         </div>
 
         <form method="POST" id="form" action="assets/bdd/connexion_action.php">

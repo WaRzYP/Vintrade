@@ -26,7 +26,13 @@ html,body{
     padding: 100px;
 }
 
+.bonjour{
+    text-align: center;
+}
 
+.bonjour-pseudo{
+    font-weight: bold;
+}
 
 .image{
     width: 200px;
