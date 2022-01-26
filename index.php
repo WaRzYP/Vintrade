@@ -21,13 +21,12 @@ if (isset($_SESSION["logged_in"]['id'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="css/template.css">
-    <title>Document</title>
 </head>
 
 <body>
 
 
-    <?php require_once('assets/templates/header.html'); ?>
+    <?php require_once('assets/templates/header.php'); ?>
 
 
     <?php

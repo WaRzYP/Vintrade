@@ -14,11 +14,15 @@
 
 <body>
 
-    <?php echo '<p class="bonjour">' . "Bonjour, " . '<span class="bonjour-pseudo">' . $_SESSION['logged_in']['pseudo'] . '</span>' . " voici les annonces du moment : " . '</p>'   ?>
+
+    <?php if (isset($_SESSION['logged_in'])) {
+        echo '<p class="bonjour">' . "Bienvenue, " . '<span class="bonjour-pseudo">' . $_SESSION['logged_in']['pseudo'] . '</span>' . " voici les annonces du moment : " . '</p>';
+    } else {
+
+        echo '<p class="bonjour"> Bienvenue, veuillez vous <a href="index.php?page=connexion">connecter</a> pour profiter pleinement du site</p>';
+    }; ?>
 
     <?php
-
-
 
     require("assets/bdd/bddconfig.php");
 
@@ -70,10 +74,12 @@
                 </div>
 
             </div>
-
         <?php
         }
         ?>
+        <form method="POST" action="assets/bdd/deconnexion.php" enctype="multipart/form-data">
+            <input type="submit" value="deco">
+        </form>
 
     </div>
 </body>
