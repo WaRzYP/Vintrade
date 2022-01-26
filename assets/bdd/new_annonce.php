@@ -31,7 +31,7 @@ try{
     //Extensions des images qu'on accepte seulement
     $extensions = ['jpg', 'png', 'jpeg', 'gif'];
     //Va permettre la vérification de la taille (ici c'est la taille a ne pas dépasser)
-    $maxSize = 10000000;
+    $maxSize = 50000000;
 
     $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
    
