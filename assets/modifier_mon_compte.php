@@ -17,7 +17,7 @@
     <div class="connexion-box">
 
 
-        <form method="POST" id="form" action="assets/bdd/update_compte.php">
+        <form method="POST" id="form" action="assets/bdd/update_compte_action.php">
 
             <div class="user-box">
                 <input type="text" name="nom" required="required">
@@ -49,20 +49,21 @@
                 <label for="">Confirmer Mot de passe *</label>
             </div>
 
-            <a id="inscription" href="#">
+            <button type="submit">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                Enregistrer
-            </a>
+                Modifier
+            </button>
 
         </form>
 
     </div>
 
-
-    <script src="js/valid_form_inscription.js"></script>
+    <!-- ajout de js/script.js-->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/valid_form_inscription.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 <?php
 
 
-if( $verif_co != 0){
+if( $verif_co == 0){
     
     header("Location: index.php");
     
@@ -69,6 +69,6 @@ if( $verif_co != 0){
 
     </div>
 
-    <script src="js/valid_form_inscription.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
