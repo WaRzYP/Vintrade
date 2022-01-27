@@ -16,21 +16,16 @@
 
     <div class="connexion-box">
 
-        <div class="content-form">
-            <label for="email">Email</label>
-            <input type="email" name="email" required>
-        </div>
-
         <form method="POST" id="form" action="assets/bdd/connexion_action.php">
 
             <div class="user-box">
                 <input type="text" name="email" required>
                 <label>Email</label>
-            </div>
+            </div>r
 
             <div class="user-box">
                 <input name="mdp" type="password">
-                <label for="">Mot de passe</label>
+                <label for="mdp">Mot de passe</label>
             </div>
 
             <button type="submit">

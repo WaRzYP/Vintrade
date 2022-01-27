@@ -3,9 +3,9 @@
 // on active les variables de session
 session_start();
 
-if (isset($_SESSION["logged_in"]['id'])) {
+if (isset($_SESSION["logged_in"]['id_user'])) {
 
-    $verif_co = $_SESSION["logged_in"]["id"];
+    $verif_co = $_SESSION["logged_in"]["id_user"];
 } else {
 
     $verif_co = 0;
