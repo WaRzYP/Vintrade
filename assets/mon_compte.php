@@ -1,9 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+
+                // faut le mettre ça ?
+<?php
+
+//  si 0 ==  l'utilisateur n'est pas connecté
+if( $verif_co == 0){
+    // du coup retour à
+    header("Location: index.php");
+    
+}
+
+?>
+
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/mon_compte.css">
     <title>Mon compte</title>
 </head>
