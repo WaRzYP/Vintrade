@@ -27,7 +27,7 @@ if (isset($_SESSION["logged_in"]['id_user'])) {
 <body>
 
 
-    <?php require_once('assets/templates/header.html'); ?>
+    <?php require_once('assets/templates/header.php'); ?>
 
 
     <?php
