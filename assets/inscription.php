@@ -19,7 +19,6 @@ if( $verif_co == 0){
 
 <body>
 
-
     <h1>Pas encore inscrit ?</h1>
 
     <div class="connexion-box">
@@ -64,6 +63,10 @@ if( $verif_co == 0){
                 <span></span>
                 S'inscrire
             </button>
+
+            <br>
+
+            <a class="bouton" href ='index.php?page=connexion'>Vers Connexion</a>
 
         </form>
 

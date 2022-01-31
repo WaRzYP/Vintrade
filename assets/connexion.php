@@ -12,6 +12,9 @@
 
 <body>
 
+    
+
+
     <h1>Déjà inscrit ?</h1>
 
     <div class="connexion-box">
@@ -35,6 +38,11 @@
                 <span></span>
                 Se connecter
             </button>
+
+            <br>
+
+            <a class="bouton" href='index.php?page=inscription'>Vers Inscription</a>
+
         </form>
 
     </div>

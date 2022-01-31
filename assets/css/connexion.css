@@ -8,6 +8,22 @@ body {
 	font-family: 'Arial', sans-serif;
 }
 
+.bouton{	
+	width: 100px;
+	height: 30px;
+	font-size: 12px;
+	margin-left: 17px;
+	background: #240046;
+	padding: 5px;
+	/* letter-spacing: 2px; */
+	text-decoration: none;
+	color: #F1EEE6;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #240046, 
+				0 0 25px #240046, 
+				0 0 50px #240046, 
+}
+
 h1{
     color: black;
     display: flex;
@@ -25,7 +41,7 @@ h1{
 	margin-bottom: 200px;
 	top: 65%;
 	left: 50%;
-	width: 400px;
+	width: 380px;
 	padding: 40px;
 	background: #240046; 
 	box-sizing: border-box;
@@ -87,6 +103,7 @@ h1{
 	background-color: transparent;
 	transition: .5s;
 	margin-top: 40px;
+	margin-bottom: 50px;
 	letter-spacing: 4px;
 }
 

@@ -17,11 +17,10 @@ h1{
 }
 
 .connexion-box {
-	margin: auto;
 	margin-bottom:100px;
 	top: 400px;
 	left: 50%;
-	width: 400px;
+	width: 380px;
 	padding: 40px;
 	background: #240046; 
 	box-sizing: border-box;

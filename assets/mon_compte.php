@@ -1,5 +1,3 @@
-
-                // faut le mettre ça ?
 <?php
 
 //  si 0 ==  l'utilisateur n'est pas connecté
@@ -12,12 +10,12 @@ if( $verif_co == 0){
 ?>
 
 
-
 <head>
     <link rel="stylesheet" href="assets/css/mon_compte.css">
     <title>Mon compte</title>
 </head>
 <body>
+
 
 
     <div class="content-description">
