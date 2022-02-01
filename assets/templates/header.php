@@ -23,7 +23,7 @@
   <header>
     <div class="hauteur">
       <img src="../img/V.png" alt="Vintrade" class="v">
-      <?php if(isset($_SESSION['logged_in']))
+      <?php if(isset($_SESSION['logged_in'])):
        ?>
         <a href="index.php?page=modifier_mon_compte">Mon profil</a>
         <a href="index.php?formulaire_ajout_annonce">Poster une annonce</a>
