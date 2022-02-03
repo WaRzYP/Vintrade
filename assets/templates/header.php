@@ -1,3 +1,11 @@
+<?php 
+require("assets/bdd/bddconfig.php");
+$bdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+if(isset($_GET['s']) AND !empty($_GET['s'])){
+  $recherche = htmlspecialchars($_GET['s']);
+  $allannonces= $bdd->query('SELECT theme FROM annonces WHERE theme LIKE "%' .$recherche. '%" ORDER BY id DESC');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,9 +26,9 @@
       <img src="assets/img/V.png" alt="Vintrade" class="v">
       <?php if (isset($_SESSION['logged_in'])) :
       ?>
-        <a href="index.php?page=profil&id_user=" <?php $_SESSION['logged_in'] ?>>Mon profil</a>
-        <a href=" index.php?formulaire_ajout_annonce">Poster une annonce</a>
-        <a href="#">Déconnexion</a>
+        <a href="index.php?page=mon_compte" <?php $_SESSION['logged_in'] ?>>Mon profil</a>
+        <a href=" index.php?page=formulaire_ajout_annonce">Poster une annonce</a>
+        <a href="assets/bdd/deconnexion">Déconnexion</a>
       <?php else : ?>
         <div class="connexion">
           <a href="index.php?page=connexion">Se Connecter</a>
@@ -95,12 +103,12 @@
             <div class="recherche">
               <input type="search" id="site-search" placeholder="Recherche" name="q" aria-label="Search through site content" class="btn">
 
-              <button><span class="iconify" data-icon="bx:bx-search-alt-2"></span></button>
+              
             </div>
+            
           </li>
-
-        </ul>
       </div>
+      
     </nav>
 
 

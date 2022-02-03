@@ -1,10 +1,14 @@
 <?php
 
 
-if( $verif_co == 0){
-    
-    header("Location: index.php");
-    
+if( $verif_co != 0){
+?>
+
+    <script>
+        window.location.href = "index.php"
+    </script>
+
+<?php 
 }
 
 ?>
