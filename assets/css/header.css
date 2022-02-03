@@ -3,6 +3,11 @@
   padding: 0px;
   font-family: Poppins, sans-serif;
 }
+
+header{
+    margin-bottom: 20px;
+}
+
 nav{
   width: 80%;
   margin: 0 auto;
