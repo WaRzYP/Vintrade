@@ -1,9 +1,3 @@
-<? echo "Bonjour" . $_SESSION['logged_in']['pseudo'] ?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,12 +16,20 @@
 <body>
   <header>
     <div class="hauteur">
-      <img src="assets/img/V.png" alt="Vintrade" class="v">
+      <img src="../img/V.png" alt="Vintrade" class="v">
+      <?php if (isset($_SESSION['logged_in'])) :
+      ?>
+        <a href="index.php?page=modifier_mon_compte">Mon profil</a>
+        <a href="index.php?formulaire_ajout_annonce">Poster une annonce</a>
+        <a href="#">Déconnexion</a>
+      <?php else : ?>
+        <div class="connexion">
+          <a href="index.php?page=connexion">Se Connecter</a>
+          <a href="index.php?page=inscription">S'inscrire</a>
+        </div>
+      <?php endif; ?>
+      </nav>
 
-      <div class="connexion">
-        <a href="index.php?page=connexion">Se Connecter</a>
-        <a href="index.php?page=inscription">S'inscrire</a>
-      </div>
     </div>
     <div class="img">
       <a href="index.php?page=accueil">
