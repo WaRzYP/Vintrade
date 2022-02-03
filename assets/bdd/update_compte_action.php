@@ -14,9 +14,9 @@ try {
 
     // Connexion à la base mysql
     $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
-
     // En cas de problème renvoie dans le catch avec l'erreur
     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
 
     // on regarde si la saisie des mots de passe sont vides pour l'update
     if($password == "" && $cpassword == ""){
@@ -84,4 +84,4 @@ try {
 
 
 
-header("Location: ../../index.php?page=accueil");
+header("Location: ../../index.php?page=accueil");       // vers accueil ou index.php ?

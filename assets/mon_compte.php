@@ -18,15 +18,19 @@ if( $verif_co == 0){
 
 
 
+<?php require("assets/bdd/bddconfig.php");
+
+?>
+
     <div class="content-description">
 
             <div class="content-avatar">
 
-                <div class="avatar"></div>
-                <div class="pseudo-avis">
-                    <p>Baptiste.L</p>
-                    <p>Avis des utilisateurs : ***** (155 évaluations) </p>
+                <div class="avatar">
+                    <img src="assets/avatar/avatar.png" alt="avatar">
                 </div>
+
+                
 
             </div>
 
@@ -35,6 +39,7 @@ if( $verif_co == 0){
             <p>Toulouse, France</p>
             <p>xxx abonnés, xxx abonnements.</p>
             <p>Description de l'utilisateur : </p>
+            
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque rerum minima nam deleniti, omnis cupiditate voluptatem laudantium alias, incidunt officia voluptatibus perferendis excepturi eum asperiores fuga, eligendi laboriosam dolorum porro!
             Enim soluta accusantium omnis nulla assumenda quam officiis tempora quis obcaecati ea quibusdam unde laboriosam voluptas, aspernatur quasi laborum magnam dolor harum! Qui aliquam expedita adipisci dicta rem itaque perferendis.</p>
         </div>
