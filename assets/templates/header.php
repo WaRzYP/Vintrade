@@ -1,3 +1,12 @@
+<?php 
+require("assets/bdd/bddconfig.php");
+$bdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
+$allannonces = $bdd->query('SELECT * FROM annonces ORDER BY id_annonce DESC');
+if(isset($_GET['s'])AND !empty($_GET['s'])){
+  $recherche = htmlspecialchars(($_GET['s']));
+  $allannonces = $bdd->query('SELECT annonce FROM annonces WHERE annonce LIKE "%'.$recherche.'%');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +15,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Header</title>
-  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="assets/css/header.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -16,7 +25,7 @@
 <body>
   <header>
     <div class="hauteur">
-      <img src="../img/V.png" alt="Vintrade" class="v">
+      <img src="assets/img/V.png" alt="Vintrade" class="v">
       <?php if(isset($_SESSION['logged_in'])):
        ?>
         <a href="index.php?page=modifier_mon_compte">Mon profil</a>
@@ -24,7 +33,7 @@
         <a href="#">Déconnexion</a>
    <?php else: ?>
        <div class="connexion">
-        <a href="index.php?page=connexion">Se Connecter</a>
+        <a href="index.php?page=connexion.php">Se Connecter</a>
         <a href="index.php?page=inscription">S'inscrire</a>
       </div>
    <?php endif; ?>
@@ -33,7 +42,7 @@
     </div>
     <div class="img">
       <a href="index.php?page=accueil">
-        <img src="../img/logo.png" class="logo" alt="Logo Vintrade">
+        <img src="assets/img/logo.png" class="logo" alt="Logo Vintrade">
       </a>
     </div>
         
@@ -94,9 +103,10 @@
       </li>
       <li class="deroulant">
   <div class="recherche">
+    <form method="GET">
 <input type="search" id="site-search"  placeholder="Recherche" name="q"
        aria-label="Search through site content" class="btn">
-
+</form>
 <button><span class="iconify" data-icon="bx:bx-search-alt-2"></span></button>
 </div>
 </li>
