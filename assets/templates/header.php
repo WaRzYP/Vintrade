@@ -16,11 +16,11 @@
 <body>
   <header>
     <div class="hauteur">
-      <img src="../img/V.png" alt="Vintrade" class="v">
+      <img src="assets/img/V.png" alt="Vintrade" class="v">
       <?php if (isset($_SESSION['logged_in'])) :
       ?>
-        <a href="index.php?page=modifier_mon_compte">Mon profil</a>
-        <a href="index.php?formulaire_ajout_annonce">Poster une annonce</a>
+        <a href="index.php?page=profil&id_user=" <?php $_SESSION['logged_in'] ?>>Mon profil</a>
+        <a href=" index.php?formulaire_ajout_annonce">Poster une annonce</a>
         <a href="#">Déconnexion</a>
       <?php else : ?>
         <div class="connexion">
@@ -33,7 +33,7 @@
     </div>
     <div class="img">
       <a href="index.php?page=accueil">
-        <img src="../img/logo.png" class="logo" alt="Logo Vintrade">
+        <img src="assets/img/logo.png" class="logo" alt="Logo Vintrade">
       </a>
     </div>
 
