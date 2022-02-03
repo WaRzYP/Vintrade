@@ -68,7 +68,59 @@ nav a{
   
 }
 
-@media screen and (min-width: 980px){
+
+
+.conteneur-contenu{
+margin: 50px 20px;
+height: 1500px;
+}
+
+
+
+.input {
+        height: 23px;
+        width: 97px;
+        margin-top: 20px;
+        border: none;      
+      }
+      button {
+          border: none;
+          background-color: white;
+      }
+      .iconify {
+          height: 25px;
+          width: 25px;
+      }
+      .img {
+          
+          
+          justify-content: center;
+           display: flex;
+          
+          
+      }
+      .connexion {
+          
+          margin-right: 20px;
+          font-size: 20px;
+          display: flex;
+          float: right;
+      }
+      .connexion a {
+          padding: 7px;
+          text-decoration: none;
+          color: black;
+      }
+      .v {
+        width: 50px;
+        height: 50px;
+      }
+     .iconify{
+       width: 5px;
+       height: 5px;
+     }
+     
+     @media screen and (min-width: 980px){
   .conteneur-nav{
       position: static;
   }
@@ -117,53 +169,3 @@ nav a{
       font-size: 12px;
   }
 }
-
-.conteneur-contenu{
-margin: 50px 20px;
-height: 1500px;
-}
-
-
-
-.input {
-        height: 23px;
-        width: 97px;
-        margin-top: 20px;
-        border: none;      
-      }
-      button {
-          border: none;
-          background-color: white;
-      }
-      .iconify {
-          height: 25px;
-          width: 25px;
-      }
-      .img {
-          
-          
-          justify-content: center;
-           display: flex;
-          
-          
-      }
-      .connexion {
-          
-          margin-right: 20px;
-          font-size: 20px;
-          display: flex;
-          float: right;
-      }
-      .connexion a {
-          padding: 7px;
-          text-decoration: none;
-          color: black;
-      }
-      .v {
-        width: 50px;
-        height: 50px;
-      }
-      .iconify {
-        width: 20px;
-        height: 20px;
-      }

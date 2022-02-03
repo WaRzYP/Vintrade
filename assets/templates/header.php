@@ -1,10 +1,10 @@
-<?php 
+<?php
 require("assets/bdd/bddconfig.php");
-$bdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
+$bdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
 $allannonces = $bdd->query('SELECT * FROM annonces ORDER BY id_annonce DESC');
-if(isset($_GET['s'])AND !empty($_GET['s'])){
+if (isset($_GET['s']) and !empty($_GET['s'])) {
   $recherche = htmlspecialchars(($_GET['s']));
-  $allannonces = $bdd->query('SELECT annonce FROM annonces WHERE annonce LIKE "%'.$recherche.'%');
+  $allannonces = $bdd->query('SELECT annonce FROM annonces WHERE annonce LIKE "%' . $recherche . '%" ORDER BY id DESC');
 }
 ?>
 <!DOCTYPE html>
@@ -103,13 +103,14 @@ if(isset($_GET['s'])AND !empty($_GET['s'])){
           <li class="deroulant">
             <div class="recherche">
               <input type="search" id="site-search" placeholder="Recherche" name="q" aria-label="Search through site content" class="btn">
+              <div class="icon">
+                <button><span class="iconify" data-icon="ci:search-small" style="color: black;"></span></button>
 
-              
             </div>
-            
+
           </li>
       </div>
-      
+
     </nav>
 
 
