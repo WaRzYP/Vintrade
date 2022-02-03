@@ -1,32 +1,135 @@
-.content-avatar{
-    display:flex;
-}
-
-.content-description{
+/* Profil de l'utilisateur */
+.box{
+    margin: 20px;
+    color: rgb(54, 53, 53);
+    background-color: rgb(212, 212, 212);
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: 200px;
+}
+
+.box-ava-pseudo{
+    display: flex;   
+}
+
+.box-pseudo{
+    font-size:40px;
+    font-weight: bold;
+}
+
+.box-avatar{
+    margin: 0 50px 0 0;
+}
+
+.box-description{
+    background-color: brown;
+    width: 60%;
+    height: 100px;
+}
+
+/* Commentaires des autres utilisateurs */
+
+.content-favoris{
+    margin: auto;
+    color: white;
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+}
+
+.box-2{
+    margin: 20px;
+    color: rgb(141, 141, 141);
+    background-color: rgb(250, 250, 250);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    border-bottom: 2px solid rgb(27, 27, 27);
+    height: 200px;
+}
+
+.box-2-ava-pseudo{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.box-2-pseudo{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.prix-taille{
     display: flex;
     flex-direction: column;
-}
-
-.pseudo-avis{
-    margin: 20px 0 0 10px;
-}
-
-.avatar{
-    width: 150px;
-    height: 150px;
-    border-radius: 197px 197px 197px 197px;
-    background-color: mediumslateblue;
-    display: flex;
-    
-}
-
-.description-profil{
-    margin: 20px 0 0 0 ;
-    width: 30%;
-    background-color: rgba(241, 240, 240, 0.87);
-    align-items: center;
     justify-content: center;
-    box-shadow: 8px 3px 6px 2px #979797;
+    align-items: center;
+}
+
+
+.content-article-vendeur{
+    display: flex;
+}
+
+.box-3{
+    background-color: blanchedalmond;
+    height: 500px;
+    width: 30%;
+    margin: 0 0 50px 20px;
+}
+
+.box-3-img{
+    display: flex;
+}
+
+.box-3-pseudo{
+    margin: auto;
+    font-weight: bold;
+}
+
+/* Formulaire + notation pour nouveau commentaire */
+
+.form-new-avis{
+    margin: auto;
+    color: rgb(138, 138, 138);
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    height: 200px;
+}
+
+textarea{
+    resize: none;
+    color: rgba(0, 0, 0, 0.384);
+}
+
+.btn-envoie{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    color:white;
+    background-color: #7B2CBF;
+    height: 50px;
+    width: 100px;
+}
+
+.stars{
+    display: flex;
+    font-size: 50px;
+    margin: auto;
+    justify-content: center;
 }
