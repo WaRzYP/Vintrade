@@ -9,13 +9,16 @@ if(isset($_POST["rating_data"]))
 		':user_name'		=>	$_POST["user_name"],
 		':user_rating'		=>	$_POST["rating_data"],
 		':user_review'		=>	$_POST["user_review"],
-		':datetime'			=>	time()
+		':datetime'			=>	time(),
+		':id_vendeur'		=>  $_POST["id_vendeur"],
 	);
+
+	echo  $_POST['id_vendeur'] , "hjhjhjhkjhkjhjkhjhhkhkjhkjkhkhkjh";
 
 	$query = "
 	INSERT INTO review_table 
-	(user_name, user_rating, user_review, datetime) 
-	VALUES (:user_name, :user_rating, :user_review, :datetime)
+	(user_name, user_rating, user_review, datetime, id_vendeur) 
+	VALUES (:user_name, :user_rating, :user_review, :datetime, :id_vendeur)
 	";
 
 	$statement = $connect->prepare($query);
@@ -51,7 +54,8 @@ if(isset($_POST["action"]))
 			'user_name'		=>	$row["user_name"],
 			'user_review'	=>	$row["user_review"],
 			'rating'		=>	$row["user_rating"],
-			'datetime'		=>	date('d/m/y', $row["datetime"])
+			'datetime'		=>	date('d/m/y', $row["datetime"]),
+			'id_vendeur'	=> $row["id_vendeur"],
 		);
 
 		if($row["user_rating"] == '5')

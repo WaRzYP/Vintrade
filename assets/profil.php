@@ -28,8 +28,6 @@ try{
     // ici on prepare notre requête SQL
     $recup = $objBdd->query("SELECT * FROM `users` WHERE users.id_user = $id_user");
 
-    $etoiles = $objBdd->query("SELECT AVG (etoile) FROM avis");
-    
 
 
 }catch( Exception $prmE){
@@ -137,8 +135,10 @@ try{
         // En cas de problème renvoie dans le catch avec l'erreur
         $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // ici on prepare notre requête SQL
-        $recup = $objBdd->query("SELECT * FROM `users`,`avis` WHERE avis.id_envoie = users.id_user AND users.id_user = $id_user");
+        $recup = $objBdd->query("SELECT * FROM `review_table` WHERE id_vendeur = $id_user");
        
+        // var_dump($recup->fetch());
+
     }catch( Exception $prmE){
 
         // Affiche le message d'erreur
@@ -238,8 +238,8 @@ try{
                     <i class="fas fa-star star-light submit_star mr-1" id="submit_star_4" data-rating="4"></i>
                     <i class="fas fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
 	        	</h4>
+                <input type="hidden" name="id_vendeur" id="id_vendeur" value="<?php echo $_GET ['id_user'] ?>">
 	        	<div class="form-group">
-                
 	        		<input type="text" name="user_name" id="user_name" class="form-control" placeholder="Enter Your Name" />
 	        	</div>
 	        	<div class="form-group">
@@ -316,7 +316,9 @@ var rating_data = 0;
 
         var user_review = $('#user_review').val();
 
-        if(user_name == '' || user_review == '')
+        var id_vendeur = $('#id_vendeur').val();
+
+        if(user_name == '' || user_review == '' || id_vendeur == '')
         {
             alert("Please Fill Both Field");
             return false;
@@ -326,7 +328,7 @@ var rating_data = 0;
             $.ajax({
                 url:"assets/bdd/submit_rating.php",
                 method:"POST",
-                data:{rating_data:rating_data, user_name:user_name, user_review:user_review},
+                data:{rating_data:rating_data, user_name:user_name, user_review:user_review, id_vendeur:id_vendeur},
                 success:function(data)
                 {
                     $('#review_modal').modal('hide');
@@ -342,106 +344,145 @@ var rating_data = 0;
 
     load_rating_data();
 
-function load_rating_data()
-{
-    $.ajax({
-        url:"assets/bdd/submit_rating.php",
-        method:"POST",
-        data:{action:'load_data'},
-        dataType:"JSON",
-        success:function(data)
-        {
-            $('#average_rating').text(data.average_rating);
-            $('#total_review').text(data.total_review);
+// function load_rating_data()
+// {
+//     $.ajax({
+//         url:"assets/bdd/submit_rating.php",
+//         method:"POST",
+//         data:{action:'load_data'},
+//         dataType:"JSON",
+//         success:function(data)
+//         {
+//             $('#average_rating').text(data.average_rating);
+//             $('#total_review').text(data.total_review);
 
-            var count_star = 0;
+//             var count_star = 0;
 
-            $('.main_star').each(function(){
-                count_star++;
-                if(Math.ceil(data.average_rating) >= count_star)
-                {
-                    $(this).addClass('text-warning');
-                    $(this).addClass('star-light');
-                }
-            });
+//             $('.main_star').each(function(){
+//                 count_star++;
+//                 if(Math.ceil(data.average_rating) >= count_star)
+//                 {
+//                     $(this).addClass('text-warning');
+//                     $(this).addClass('star-light');
+//                 }
+//             });
 
-            $('#total_five_star_review').text(data.five_star_review);
+//             $('#total_five_star_review').text(data.five_star_review);
 
-            $('#total_four_star_review').text(data.four_star_review);
+//             $('#total_four_star_review').text(data.four_star_review);
 
-            $('#total_three_star_review').text(data.three_star_review);
+//             $('#total_three_star_review').text(data.three_star_review);
 
-            $('#total_two_star_review').text(data.two_star_review);
+//             $('#total_two_star_review').text(data.two_star_review);
 
-            $('#total_one_star_review').text(data.one_star_review);
+//             $('#total_one_star_review').text(data.one_star_review);
 
-            $('#five_star_progress').css('width', (data.five_star_review/data.total_review) * 100 + '%');
+//             $('#five_star_progress').css('width', (data.five_star_review/data.total_review) * 100 + '%');
 
-            $('#four_star_progress').css('width', (data.four_star_review/data.total_review) * 100 + '%');
+//             $('#four_star_progress').css('width', (data.four_star_review/data.total_review) * 100 + '%');
 
-            $('#three_star_progress').css('width', (data.three_star_review/data.total_review) * 100 + '%');
+//             $('#three_star_progress').css('width', (data.three_star_review/data.total_review) * 100 + '%');
 
-            $('#two_star_progress').css('width', (data.two_star_review/data.total_review) * 100 + '%');
+//             $('#two_star_progress').css('width', (data.two_star_review/data.total_review) * 100 + '%');
 
-            $('#one_star_progress').css('width', (data.one_star_review/data.total_review) * 100 + '%');
+//             $('#one_star_progress').css('width', (data.one_star_review/data.total_review) * 100 + '%');
 
-            if(data.review_data.length > 0)
-            {
-                var html = '';
+//             if(data.review_data.length > 0)
+//             {
+//                 var html = '';
 
-                for(var count = 0; count < data.review_data.length; count++)
-                {
-                    html += '<div class="row mb-3">';
+//                 for(var count = 0; count < data.review_data.length; count++)
+//                 {
+//                     html += '<div class="row mb-3">';
 
-                    html += '<div class="col-sm-1"><div class="rounded-circle bg-danger text-white pt-2 pb-2"><h3 class="text-center">'+data.review_data[count].user_name.charAt(0)+'</h3></div></div>';
+//                     html += '<div class="col-sm-1"><div class="rounded-circle bg-danger text-white pt-2 pb-2"><h3 class="text-center">'+data.review_data[count].user_name.charAt(0)+'</h3></div></div>';
 
-                    html += '<div class="col-sm-11">';
+//                     html += '<div class="col-sm-11">';
 
-                    html += '<div class="card">';
+//                     html += '<div class="card">';
 
-                    html += '<div class="card-header"><b>'+data.review_data[count].user_name+'</b></div>';
+//                     html += '<div class="card-header"><b>'+data.review_data[count].user_name+'</b></div>';
 
-                    html += '<div class="card-body">';
+//                     html += '<div class="card-body">';
 
-                    for(var star = 1; star <= 5; star++)
-                    {
-                        var class_name = '';
+//                     for(var star = 1; star <= 5; star++)
+//                     {
+//                         var class_name = '';
 
-                        if(data.review_data[count].rating >= star)
-                        {
-                            class_name = 'text-warning';
-                        }
-                        else
-                        {
-                            class_name = 'star-light';
-                        }
+//                         if(data.review_data[count].rating >= star)
+//                         {
+//                             class_name = 'text-warning';
+//                         }
+//                         else
+//                         {
+//                             class_name = 'star-light';
+//                         }
 
-                        html += '<i class="fas fa-star '+class_name+' mr-1"></i>';
-                    }
+//                         html += '<i class="fas fa-star '+class_name+' mr-1"></i>';
+//                     }
 
-                    html += '<br />';
+//                     html += '<br />';
 
-                    html += data.review_data[count].user_review;
+//                     html += data.review_data[count].user_review;
 
-                    html += '</div>';
+//                     html += '</div>';
 
-                    html += '<div class="card-footer text-right">On '+data.review_data[count].datetime+'</div>';
+//                     html += '<div class="card-footer text-right">On '+data.review_data[count].datetime+'</div>';
 
-                    html += '</div>';
+//                     html += '</div>';
 
-                    html += '</div>';
+//                     html += '</div>';
 
-                    html += '</div>';
-                }
+//                     html += '</div>';
+//                 }
 
-                $('#review_content').html(html);
-            }
-        }
-    })
-}
+//                 $('#review_content').html(html);
+//             }
+//         }
+//     })
+// }
 
 </script>
- 
+
+<div class="d-flex flex-column justify-content-center m-5">
+
+    <?php
+
+        while($message = $recup->fetch()){
+    ?>
+            <div class="col-8 bg-dark mt-5 mr-auto ml-auto p-2">
+
+                <div class="bg-light text-dark p-2 ">
+                    <?php echo $message["user_name"]; ?>
+
+                </div>
+
+                <div class="bg-dark text-light">
+                    <?php echo $message["user_review"]; ?>
+                </div>
+
+                <?php for($i = 0; $i < $message["user_rating"]; $i++){
+
+                    echo'<i class="fas fa-star text-warning"></i>';
+
+                }
+                
+                if($message["user_rating"] == 0){
+
+                    echo '<i class="fas fa-star star-light mr-1 main_star"></i>';
+                }
+
+                ?>
+
+                
+
+            </div>
+
+    <?php
+        }
+    ?>
+
+</div>
 
 </body>
 </html>
