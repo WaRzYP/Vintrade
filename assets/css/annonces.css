@@ -69,9 +69,13 @@
 		text-align: start;
 	}
 	.user input,.user textarea,.user select {
-		width: 300px;
-		-webkit-box-shadow: -1px 6px 8px -6px #000000; 
-		box-shadow: -1px 6px 8px -6px #000000;
+		width: 500px;
+		/* -webkit-box-shadow: -1px 6px 8px -6px #000000; 
+		box-shadow: -1px 6px 8px -6px #000000; */
+		border-right:none;
+		border-left:none;
+		border-top:none;
+		margin-top: 30px;
 	}
 	.user label {
 		text-decoration: underline 3px #9D4EDD;
@@ -81,11 +85,9 @@
 	}
 	#taille{
 		margin-left: 60px;
-		width: 305px;
 	}
 	#theme{
 		margin-left: 50px;
-		width: 305px;
 	}
 	#prix {
 		margin-left: 55px;
@@ -138,6 +140,7 @@
 		font-family: Helvetica, Arial, Sans-serif;
 		font-size: 1em;
 		transform-origin: 50% 5em;
+		margin-top: 50px;
 	}
 
 
