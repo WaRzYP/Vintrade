@@ -11,12 +11,6 @@
 
 <body>
 
-
-    <!-- Récupère le header et l'affiche sur la page -->
-    <?php include("header.html"); ?>
-
-
-
     <?php
 
 
@@ -80,10 +74,6 @@
     <?php
     }
     ?>
-
-
-    <!-- recupère le footer et l'affiche sur notre page -->
-    <?php include("footer.html"); ?>
 
 
 

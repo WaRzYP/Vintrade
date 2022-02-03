@@ -9,16 +9,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/img/V.png">
+
     <title>Vintrade - Accueil</title>
+
 </head>
 
 <body>
 
-    <?php echo '<p class="bonjour">' . "Bonjour " . '<span class="bonjour-pseudo">' . $_SESSION['logged_in']['pseudo'] . '</span>,' . " voici les annonces du moment : " . '</p>'   ?>
+
+    <?php if (isset($_SESSION['logged_in'])) {
+
+        echo '<p class="bonjour">' . "Bienvenue, " . '<span class="bonjour-pseudo">' . $_SESSION['logged_in']['pseudo'] . '</span>' . " voici les annonces du moment : " . '</p>';
+    } else {
+
+        echo '<p class="bonjour"> Bienvenue, veuillez vous <a href="index.php?page=connexion">connecter</a> pour profiter pleinement du site</p>';
+    }; ?>
 
     <?php
-
-
 
     require("assets/bdd/bddconfig.php");
 
@@ -45,6 +53,7 @@
     <div class="content-comment">
 
         <?php
+
         while ($messageSimple = $recup->fetch()) {
 
         ?>
@@ -70,7 +79,6 @@
                 </div>
 
             </div>
-
         <?php
         }
         ?>

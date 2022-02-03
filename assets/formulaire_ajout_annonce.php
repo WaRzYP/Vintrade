@@ -74,13 +74,14 @@
                     <option value="livre">Livres & Bandes déssinées</option>
                 </select>
             </div>
-            <input type="hidden" value="1" name="iduser">
+            <input type="hidden" value=<?php echo $_SESSION['logged_in']['id_user'] ?> name="iduser">
             <div class="validation">
                 <input type="submit" value="Envoyer">
             </div>
 
         </form>
     </div>
+
 </body>
 
 <script src="js/script_annonces.js"></script>
