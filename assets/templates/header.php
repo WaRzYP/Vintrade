@@ -1,9 +1,10 @@
 <?php 
 require("assets/bdd/bddconfig.php");
-$bdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
-if(isset($_GET['s']) AND !empty($_GET['s'])){
-  $recherche = htmlspecialchars($_GET['s']);
-  $allannonces= $bdd->query('SELECT theme FROM annonces WHERE theme LIKE "%' .$recherche. '%" ORDER BY id DESC');
+$bdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
+$allannonces = $bdd->query('SELECT * FROM annonces ORDER BY id_annonce DESC');
+if(isset($_GET['s'])AND !empty($_GET['s'])){
+  $recherche = htmlspecialchars(($_GET['s']));
+  $allannonces = $bdd->query('SELECT annonce FROM annonces WHERE annonce LIKE "%'.$recherche.'%');
 }
 ?>
 <!DOCTYPE html>
