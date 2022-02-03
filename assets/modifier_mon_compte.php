@@ -8,6 +8,16 @@
 
     <h1>Modifier son compte</h1>
     
+    <div class="avatar">
+
+        </label>
+
+            <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
+
+        <label for="file">*(max 5Mo) </label>
+        
+    </div>
+
 
     <div class="connexion-box">
 

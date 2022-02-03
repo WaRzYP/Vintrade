@@ -17,7 +17,7 @@ try{
     $recup = $objBdd->prepare("UPDATE `message` SET `pseudo` = :pseudo , `message` = :messageAdd WHERE `id` = $id ");
 
     $recup->bindParam(':pseudo' , $pseudo , PDO::PARAM_STR);
- 
+
     $recup->bindParam(':messageAdd' , $messageAdd , PDO::PARAM_STR);
 
     $recup->execute();

@@ -4,7 +4,7 @@
 if( $verif_co == 0){
     // du coup retour à
     header("Location: index.php");
-    
+
 }
 
 ?>
@@ -29,8 +29,6 @@ if( $verif_co == 0){
                 <div class="avatar">
                     <img src="assets/avatar/avatar.png" alt="avatar">
                 </div>
-
-                
 
             </div>
 

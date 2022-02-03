@@ -24,7 +24,7 @@
             <div class="user-box">
                 <input type="text" name="email" required>
                 <label>Email</label>
-            </div>r
+            </div>
 
             <div class="user-box">
                 <input name="mdp" type="password">
