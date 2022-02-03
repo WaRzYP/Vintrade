@@ -8,7 +8,7 @@
     <title>Favoris</title>
 </head>
 <body>
-<?php include ('templates/header.html'); ?>
+
     <h1>Vos favoris</h1>
 
 
